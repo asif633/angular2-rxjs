@@ -3,14 +3,14 @@
     <h2 class="ui center aligned icon header">
         <i class="circular github icon"></i> Github Search
     </h2>
-    <form class="ui form" [formGroup]="searchForm">
+    
         <div class="ui search field">
             <div class="ui icon input">
-                <input id="search" formControlName="search" class="prompt" type="text" placeholder="Search for..">
+                <input id="search" [formControl]="term" class="prompt" type="text" placeholder="Search for..">
                 <i class="search icon"></i>
             </div>
         </div>
-    </form>
+    
 
 </div>
 

@@ -16,13 +16,12 @@ export class GithubSearchOptimizedComponent implements OnInit {
    // repos:any[];
     searchForm: any;
     results$: Observable<any>; 
+     term = new FormControl();
 
     constructor(private _formBuilder: FormBuilder) { 
      //   this.user = false;
-        this.searchForm = this._formBuilder.group({
-            search: ['', Validators.required]
-        });
-        this.results$ = this.searchForm.controls.search.valueChanges // <- Observable Form
+       
+        this.results$ = this.term.valueChanges // <- Observable Form
             .map(search => console.log(search));
                 //  .debounceTime(400)
                 //  .distinctUntilChanged()

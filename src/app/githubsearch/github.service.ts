@@ -13,12 +13,12 @@ export class GithubService {
      }
 
      getUser(username:string){
-        return this._http.get('http://api.github.com/users/'+username+'?client_id='+this.client_id+'&client_secret='+this.client_secret)
+        return this._http.get('https://api.github.com/users/'+username+'?client_id='+this.client_id+'&client_secret='+this.client_secret)
             .map(res => res.json());
     }
     
     getRepos(username:string){
-        return this._http.get('http://api.github.com/users/'+username+'/repos?client_id='+this.client_id+'&client_secret='+this.client_secret)
+        return this._http.get('https://api.github.com/users/'+username+'/repos?client_id='+this.client_id+'&client_secret='+this.client_secret)
             .map(res => res.json());
     }
     
