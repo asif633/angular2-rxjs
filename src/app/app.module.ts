@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { NgSemanticModule } from 'ng-semantic';
@@ -29,6 +29,7 @@ import { GithubService } from './githubsearch/github.service';
     BrowserModule,
     HttpModule,
     ReactiveFormsModule,
+    FormsModule,
     NgSemanticModule,
     routing
   ],
