@@ -27,7 +27,6 @@ import { GithubService } from './githubsearch/github.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     ReactiveFormsModule,
     NgSemanticModule,
