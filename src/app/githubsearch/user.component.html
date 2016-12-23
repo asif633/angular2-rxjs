@@ -1,0 +1,37 @@
+<div class="ui special cards" *ngIf="user">
+  <div class="card">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <a class="ui inverted button" target="_blank" href="{{user.html_url}}">View Profile</a>
+          </div>
+        </div>
+      </div>
+      <img class="img-thumbnail" src="{{user.avatar_url}}" (mouseover)='dimOnHover()'>
+    </div>
+    <div class="content">
+      <a class="header">{{user.name}}</a>
+      <div class="meta">
+        <ul class="ui list-group">
+                        <li class="ui list-group-item"><strong>Username: </strong>{{user.login}}</li>
+                        <li class="ui list-group-item"><strong>Location: </strong>{{user.location}}</li> 
+                        <li class="ui list-group-item"><strong>Email: </strong>{{user.email}}</li> 
+                        <li class="ui list-group-item"><strong>Blog: </strong>{{user.blog}}</li> 
+                        <li class="ui list-group-item"><strong>Member Since: </strong>{{user.created_at | date}}</li> 
+        </ul>
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
+      <span class="label label-default">{{user.public_repos}} Public Repos</span>
+                        <span class="label label-primary">{{user.public_gists}} Public Gists</span>
+                        <span class="label label-success">{{user.followers}} Followers</span>
+                        <span class="label label-info">{{user.following}} Following</span>
+    </div>
+  </div>
+
+</div>

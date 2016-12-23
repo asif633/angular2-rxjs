@@ -1,14 +1,62 @@
-<form [formGroup]="searchForm">
-    <label for="search">Search YouTube</label><br />
-    <input id="search" formControlName="search" />
-</form>
 
-<ul>
-<li *ngFor="let result of results$ | async"> <!-- Observable templates/pipes -->
+<div class="ui container" style="margin-top: 10px;">
+
+  <h2 class="ui center aligned icon header">
+    <i class="circular youtube icon"></i> Youtube Search
+  </h2>
+
+  <form [formGroup]="searchForm" class="ui form">
+    <!--<div class="field">
+      <label>Search For:</label>
+      <input id="search" formControlName="search">
+    </div>-->
+
+    <div class="ui search field">
+      <div class="ui icon input">
+        <input id="search" formControlName="search" class="prompt" type="text" placeholder="Search for..">
+        <i class="search icon"></i>
+      </div>
+    </div>
+
+  </form>
+
+  <h4 *ngIf="results$" class="ui horizontal divider header">
+    <i class="video icon"></i> Videos
+  </h4>
+
+  <sm-cards *ngIf="results$">
+    <sm-card class="ui card" *ngFor="let result of results$ | async" [image]="result.snippet.thumbnails.high.url">
+      <card-title> {{result.snippet.title}} </card-title>
+      <card-subtitle> {{result.snippet.publishedAt | date}} </card-subtitle>
+      <card-content>
+        {{result.snippet.description}}
+      </card-content>
+      <card-extra>
+        <a href="https://www.youtube.com/watch?v={{result.id.videoId}}" target="_blank">
+          <i class="youtube icon big"></i>
+        </a>
+      </card-extra>
+    </sm-card>
+  </sm-cards>
+
+</div>
+
+
+<!--<sm-list class="divided" *ngIf="results$">
+    <sm-item *ngFor="let result of results$ | async" [image]="result.snippet.thumbnails.default.url" [header]="result.snippet.title">
+     <a href="https://www.youtube.com/watch?v={{result.id.videoId}}" target="_blank">
+      {{result.snippet.title}}
+    </a>
+    <p>{{result.snippet.description}}</p>
+    </sm-item>
+</sm-list>-->
+
+<!--<ul>
+<li *ngFor="let result of results$ | async"> 
   <a href="https://www.youtube.com/watch?v={{result.id.videoId}}" target="_blank">
     <h3>{{result.snippet.title}}</h3>
   </a>
   <p>{{result.snippet.description}}</p>
   <img [src]="result.snippet.thumbnails.default.url" style="width: 100%; max-width: 250px;" />
 </li>
-</ul>
+</ul>-->

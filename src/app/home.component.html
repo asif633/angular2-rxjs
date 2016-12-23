@@ -1,0 +1,14 @@
+<sm-menu title="Angular2" class="inverted teal">
+    <a [routerLink]="['/']" sm-item>Home</a>
+    <a routerLinkActive="active" [routerLink]="['/youtube-search']" sm-item>Youtube Search</a>
+    <div class="ui simple dropdown item">
+      Github Search
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a routerLinkActive="active" [routerLink]="['/github-search-simple']" sm-item>Simple</a>
+        <a routerLinkActive="active" [routerLink]="['/github-search-optimized']" sm-item>Optimized</a>
+      </div>
+    </div>
+    
+</sm-menu>
+<router-outlet></router-outlet>

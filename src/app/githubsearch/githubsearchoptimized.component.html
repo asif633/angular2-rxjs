@@ -1,0 +1,26 @@
+<div class="ui container" style="margin-top: 10px;">
+
+    <h2 class="ui center aligned icon header">
+        <i class="circular github icon"></i> Github Search
+    </h2>
+    <form class="ui form" [formGroup]="searchForm">
+        <div class="ui search field">
+            <div class="ui icon input">
+                <input id="search" formControlName="search" class="prompt" type="text" placeholder="Search for..">
+                <i class="search icon"></i>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<div class="ui raised very padded text container segment" *ngIf="user" style="margin-bottom: 20px">
+    <div class="ui two column tablet stackable grid container">
+        <div class="column">
+            <user-search [user]="user"></user-search>
+        </div>
+        <div class="column">
+            <repo-search [repos]="repos"></repo-search>
+        </div>
+    </div>
+</div>

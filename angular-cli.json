@@ -18,9 +18,16 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "styles.css",
+          "../node_modules/font-awesome/css/font-awesome.min.css",
+          "../semantic/semantic.min.css",
+          "../semantic/components/dimmer.min.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../semantic/semantic.min.js",
+        "../semantic/components/dimmer.min.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
